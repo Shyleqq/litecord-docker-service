@@ -22,7 +22,7 @@ poetry run ./manage.py migrate
 if [[ -z $ADMIN_ID ]]; then
     user_token=$(poetry run ./manage.py addbot "Testing bot" testing@example.com password)
 
-    export ADMIN_ID=$(cut -f 1 -d '.' $user_token | base64 --decode)
+    export ADMIN_ID=$(cut -f 1 -d '.' <<< $user_token | base64 --decode)
 fi
 
 exec "$@"

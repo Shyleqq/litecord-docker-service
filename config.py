@@ -27,7 +27,7 @@ class DockerService:
 
     MAIN_URL = os.environ["LITECORD_HOSTNAME"]
     NAME = "Litecord/Docker"  # Name of this specific instance
-    DEBUG = True  # Debug logging
+    DEBUG = False  # Debug logging
 
     #: Enable ssl?
     #  many routes will start giving https / wss
