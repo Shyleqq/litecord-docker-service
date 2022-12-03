@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Litecord Docker Service
 # Copyright (C) 2022  Bluenix and Litecord Docker Service Contributors
