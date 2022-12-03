@@ -17,7 +17,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # Generate an ADMIN_ID for Litecord to read, unless already set
-if [[ -z $ADMIN_ID ]] then
+if [[ -z $ADMIN_ID ]]; then
     user_token=$(poetry run ./manage.py addbot "Testing bot" testing@example.com password)
 
     export ADMIN_ID=$(cut -f -d '.' $user_token | base64 --decode)
