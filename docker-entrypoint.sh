@@ -16,6 +16,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+poetry run ./manage.py migrate
+
 # Generate an ADMIN_ID for Litecord to read, unless already set
 if [[ -z $ADMIN_ID ]]; then
     user_token=$(poetry run ./manage.py addbot "Testing bot" testing@example.com password)
