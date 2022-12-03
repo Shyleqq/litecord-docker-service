@@ -19,7 +19,7 @@ FROM --platform=linux/amd64 python:3.9
 # Prevent Python from creating .pyc files, poluting the container
 ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
 
-ENV POETRY_VERSION=1.0.3 \
+ENV POETRY_VERSION=1.2.2 \
     POETRY_HOME="/opt/poetry" \
     # Prevent Poetry from displaying prompts
     POETRY_NO_INTERACTION=1
