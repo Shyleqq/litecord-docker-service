@@ -37,13 +37,7 @@ jobs:
           path: 'docker'
 
       - name: Checkout litecord
-        uses: actions/checkout@v3.1.0
-        with:
-          repository: 'litecord/litecord'
-          ref: 'master'
-
-          token: ''
-          github-server-url: 'https://gitlab.com'
+        run: /usr/bin/git clone https://gitlab.com/litecord/litecord.git ./
 
       - name: Copy repository files into Litecord
         run: cp docker/{Dockerfile, docker-entrypoint.sh, config.py} ./
