@@ -16,8 +16,6 @@
 
 FROM --platform=linux/amd64 python:3.9
 
-COPY docker-entrypoint.sh ./
-
 # Prevent Python from creating .pyc files, poluting the container
 ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
 
@@ -42,6 +40,7 @@ COPY pyproject.toml poetry.lock ./
 
 RUN poetry install --without dev
 
+COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 CMD ["poetry", "run", "hypercorn", "run:app"]
