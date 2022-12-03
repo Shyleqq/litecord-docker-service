@@ -31,13 +31,13 @@ jobs:
       packages: write
 
     steps:
+      - name: Checkout litecord
+        run: /usr/bin/git clone https://gitlab.com/litecord/litecord.git ./
+
       - name: Checkout repository
         uses: actions/checkout@v3.1.0
         with:
           path: 'docker'
-
-      - name: Checkout litecord
-        run: /usr/bin/git clone https://gitlab.com/litecord/litecord.git ./
 
       - name: Copy repository files into Litecord
         run: cp docker/{Dockerfile, docker-entrypoint.sh, config.py} ./
