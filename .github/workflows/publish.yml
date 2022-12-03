@@ -40,7 +40,7 @@ jobs:
           path: 'docker'
 
       - name: Copy repository files into Litecord
-        run: cp docker/{Dockerfile, docker-entrypoint.sh, config.py} ./
+        run: cp docker/{Dockerfile,docker-entrypoint.sh,config.py} ./
 
       - name: Log into the Container registry
         uses: docker/login-action@v2.1.0
