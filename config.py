@@ -70,7 +70,7 @@ class DockerService:
     LVSP_SECRET = ""  # Shared secret for LVSP
 
     # Admin ID and token configuration
-    ADMIN_ID = os.environ["ADMIN_ID"]
+    ADMIN_ID = os.getenv("ADMIN_ID")
     ADMIN_TOKEN = os.getenv("ADMIN_TOKEN")
 
     if ADMIN_ID is not None:
