@@ -16,6 +16,8 @@
 
 FROM --platform=linux/amd64 python:3.9
 
+COPY docker-entrypoint.sh ./
+
 # Prevent Python from creating .pyc files, poluting the container
 ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
 
