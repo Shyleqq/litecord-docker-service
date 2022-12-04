@@ -23,7 +23,7 @@ if [[ -z $ADMIN_ID ]]; then
     bot_output=$(poetry run ./manage.py addbot "Testing bot" testing@example.com password)
 
     # Grab the last value in the output, as to ignore other logs
-    user_token=$(rev <<< "$bot_output" | cut -f 1 -d ' ' | rev)
+    user_token=$(rev <<< "$bot_output" | cut -f 1 -d '\n' | rev)
 
     echo $user_token
 
