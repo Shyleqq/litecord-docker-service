@@ -25,6 +25,8 @@ if [[ -z $ADMIN_ID ]]; then
     # Grab the last value in the output, as to ignore other logs
     user_token=$(rev <<< "$bot_output" | cut -f 1 -d ' ' | rev)
 
+    echo $user_token
+
     export ADMIN_ID=$(cut -f 1 -d '.' <<< "$user_token" | base64 --decode)
 fi
 
