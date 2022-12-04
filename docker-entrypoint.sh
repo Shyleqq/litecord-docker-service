@@ -20,8 +20,10 @@ poetry run ./manage.py migrate
 
 # Generate an ADMIN_ID for Litecord to read, unless already set
 if [[ -z $ADMIN_ID ]]; then
-    user_token=$(poetry run ./manage.py addbot "Testing bot" testing@example.com password)
-    echo $user_token
+    bot_output=$(poetry run ./manage.py addbot "Testing bot" testing@example.com password)
+
+    # Grab the last value in the output, as to ignore other logs
+    user_token=$(rev <<< "$bot_output" | cut -f 1 -d ' ' | rev)
 
     export ADMIN_ID=$(cut -f 1 -d '.' <<< "$user_token" | base64 --decode)
 fi
